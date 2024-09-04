@@ -13,6 +13,8 @@ import {
 import { Line } from 'react-chartjs-2';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import markerIconPng from '../assets/marker-icon-2x.png'
+import L from 'leaflet';
 
 
 ChartJS.register(
@@ -25,6 +27,13 @@ ChartJS.register(
   Legend
 );
 
+const customIcon = new L.Icon({
+  iconUrl: markerIconPng,
+  iconSize: [25, 41], 
+  iconAnchor: [12, 41], 
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 interface CountryInfo {
   _id: string;
@@ -95,6 +104,7 @@ const Dashboard: React.FC = () => {
             <Marker
               key={country.countryInfo._id}
               position={[country.countryInfo.lat, country.countryInfo.long]}
+              icon={customIcon}
             >
               <Popup>
                 <div>

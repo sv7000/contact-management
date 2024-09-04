@@ -24,7 +24,7 @@ const ContactList: React.FC = () => {
           </Link>
           <div className="bg-slate-200 h-40 w-full max-w-md mx-auto flex justify-center items-center mt-12 shadow-lg rounded-lg">
             <p className="text-center text-red-600 font-semibold">
-              No contacts found. Please add a contact using the button above.
+              No contacts found. Please add a contact using the create contact button above.
             </p>
           </div>
         </div>
